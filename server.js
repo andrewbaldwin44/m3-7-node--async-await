@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
-const { handleJoke } = require('./handlers');
+const { handleJoke, randomJoke } = require('./handlers');
 
 express()
   .use(function (req, res, next) {
@@ -22,5 +22,6 @@ express()
   .set('view engine', 'ejs')
 
   .get('/joke/:type', handleJoke)
+  .get('/make-me-laugh', randomJoke)
 
   .listen(8000, () => console.log(`Listening on port 8000`));
