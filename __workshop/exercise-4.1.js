@@ -1,6 +1,11 @@
 const request = require('request-promise');
 
-// getDadJoke
+async function getDadJoke() {
+  const response = await request({uri: 'https://icanhazdadjoke.com',
+                                  headers: {"Accept" : "application/json"},
+                                  json: true});
 
-// 4.1
-// getJoke().then((data) => console.log(data));
+  return response.joke;
+}
+
+getDadJoke().then((data) => console.log(data));
