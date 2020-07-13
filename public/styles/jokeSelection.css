@@ -1,0 +1,17 @@
+body {
+  justify-content: flex-start;
+  margin-top: 100px;
+}
+
+.joke-select {
+  border: 3px solid black;
+  margin-top: 50px;
+  width: 200px;
+  height: 70px;
+}
+
+.joke-container {
+  display: none;
+  text-align: center;
+  margin-top: 50px;
+}

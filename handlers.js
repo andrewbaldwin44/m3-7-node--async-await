@@ -1,32 +1,19 @@
+const request = require('request-promise');
+
 const { getDadJoke } = require('./__workshop/exercise-4.1');
 const { getTronaldDumpQuote } = require('./__workshop/exercise-4.2');
 const { getGeekJoke } = require('./__workshop/exercise-4.3');
 
 async function sendDadJoke() {
-  try {
-    return { status: 200, joke: await getDadJoke() };
-  }
-  catch (e) {
-    console.log(e);
-  }
+  return { status: 200, joke: await getDadJoke() };
 }
 
 async function sendTronaldDumpQuote() {
-  try {
-    return { status: 200, joke: await getTronaldDumpQuote() };
-  }
-  catch (e) {
-    console.log(e);
-  }
+  return { status: 200, joke: await getTronaldDumpQuote() };
 }
 
 async function sendGeekJoke() {
-  try {
-    return { status: 200, joke: await getGeekJoke() };
-  }
-  catch (e) {
-    console.log(e);
-  }
+  return { status: 200, joke: await getGeekJoke() };
 }
 
 async function handleJoke(req, res, next) {
@@ -64,7 +51,12 @@ async function randomJoke(req, res) {
       break;
   }
 
+  joke.title = 'Random Jokes'
   res.render('./pages/jokes', joke);
 }
 
-module.exports = { handleJoke, randomJoke };
+function selectJoke(req, res) {
+  res.render('./pages/jokeSelection', {title: 'Jokes'});
+}
+
+module.exports = { handleJoke, randomJoke, selectJoke };

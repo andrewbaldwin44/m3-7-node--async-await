@@ -1,0 +1,18 @@
+<%- include('../partials/header') -%>
+  <link rel="stylesheet" href="./styles/jokeSelection.css">
+  <label for="joke-select" class="text select-label">
+    What kind of joke would you like to hear?
+  </label>
+  <select name="joke-select" id="joke-select" class="joke-select">
+    <option value="" selected>Select</option>
+    <option value="dad">Dad Joke</option>
+    <option value="tronald">Trump Joke</option>
+    <option value="geek">Geek Joke</option>
+  </select>
+
+  <div id="joke-container" class="joke-container">
+    <%- include('../partials/joke', {joke: ''}) -%>
+  </div>
+
+  <script src="./scripts/jokeSelection.js"></script>
+<%- include('../partials/footer') -%>
