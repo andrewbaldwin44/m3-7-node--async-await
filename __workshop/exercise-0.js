@@ -14,7 +14,7 @@ const handleCompareToTen = async (num) => {
   try {
     const result = await compareToTen(num);
     console.log(result);
-  } catch {
+  } catch (err) {
     console.log(err);
   }
 };
