@@ -9,3 +9,5 @@ async function getDadJoke() {
 }
 
 getDadJoke().then((data) => console.log(data));
+
+module.exports = { getDadJoke };

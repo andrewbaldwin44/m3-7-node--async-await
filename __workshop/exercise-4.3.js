@@ -7,3 +7,5 @@ const getGeekJoke = async () => {
 };
 
 getGeekJoke().then(response => console.log(response));
+
+module.exports = { getGeekJoke };
